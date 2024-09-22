@@ -12,6 +12,9 @@ import {store} from "./store.ts";
 import i18next from 'i18next';
 import { initReactI18next } from 'react-i18next';
 import en from './i18n/en.json';
+import Index from './pages/index/Index.tsx';
+import Results from './pages/index/Results.tsx';
+import Settings from './pages/index/Settings.tsx';
 
 i18next.use(initReactI18next).init({
     lng: 'en', // if you're using a language detector, do not define the lng option
@@ -29,6 +32,18 @@ i18next.use(initReactI18next).init({
 const router = createBrowserRouter([
     {
         path: "/",
+        element: <Index />,
+    },
+    {
+        path: "/results",
+        element: <Results />,
+    },
+    {
+        path: "/settings",
+        element: <Settings />,
+    },
+    {
+        path: "/app",
         element: <App />,
     },
     {

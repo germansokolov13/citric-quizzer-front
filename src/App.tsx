@@ -1,10 +1,10 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
-import './App.css'
 import styled from "styled-components";
 import {useDispatch, useSelector} from "react-redux";
 import {incremented, interesting, selectCount} from "./store.ts";
-import {useTranslation} from "react-i18next";
+import {useTranslation} from 'react-i18next';
+import Layout from './common/components/Layout.tsx';
 
 const Xa = styled.div`
     background-color: red;
@@ -18,7 +18,7 @@ function App() {
   const {t} = useTranslation();
 
   return (
-    <>
+    <Layout>
         <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-16">
             <Xa>asdas</Xa>
             <Xa>asdas</Xa>
@@ -48,7 +48,7 @@ function App() {
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
-    </>
+    </Layout>
   )
 }
 
