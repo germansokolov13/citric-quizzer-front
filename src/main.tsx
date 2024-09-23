@@ -16,6 +16,7 @@ import Index from './pages/index/components/Index.tsx';
 import Results from './pages/results/Results.tsx';
 import Settings from './pages/settings/Settings.tsx';
 import AntdConfigProvider from './common/components/AntdConfigProvider.tsx';
+import AnswerQuestion from './pages/answer-question/AnswerQuestion.tsx';
 
 i18next.use(initReactI18next).init({
     lng: 'en', // if you're using a language detector, do not define the lng option
@@ -42,6 +43,10 @@ const router = createBrowserRouter([
     {
         path: "/settings",
         element: <Settings />,
+    },
+    {
+        path: "/answer-question",
+        element: <AnswerQuestion />,
     },
     {
         path: "/app",
