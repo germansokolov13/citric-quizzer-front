@@ -4,10 +4,10 @@ export default function Layout(props: any) {
   const {children} = props;
 
   return <>
-    <div>
+    <div className="">
       <MainMenu />
     </div>
-    <div>
+    <div className="mx-8 my-4">
       {children}
     </div>
   </>;

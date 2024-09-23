@@ -12,9 +12,10 @@ import {store} from "./store.ts";
 import i18next from 'i18next';
 import { initReactI18next } from 'react-i18next';
 import en from './i18n/en.json';
-import Index from './pages/index/Index.tsx';
-import Results from './pages/index/Results.tsx';
-import Settings from './pages/index/Settings.tsx';
+import Index from './pages/index/components/Index.tsx';
+import Results from './pages/results/Results.tsx';
+import Settings from './pages/settings/Settings.tsx';
+import AntdConfigProvider from './common/components/AntdConfigProvider.tsx';
 
 i18next.use(initReactI18next).init({
     lng: 'en', // if you're using a language detector, do not define the lng option
@@ -55,7 +56,9 @@ const router = createBrowserRouter([
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
       <Provider store={store}>
-        <RouterProvider router={router} />
+          <AntdConfigProvider>
+              <RouterProvider router={router} />
+          </AntdConfigProvider>
       </Provider>
   </StrictMode>,
 )

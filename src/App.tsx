@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import styled from "styled-components";
-import {useDispatch, useSelector} from "react-redux";
-import {incremented, interesting, selectCount} from "./store.ts";
+import {useSelector} from "react-redux";
+import { incremented, interesting, selectCount, useAppDispatch } from "./store.ts";
 import {useTranslation} from 'react-i18next';
 import Layout from './common/components/Layout.tsx';
 
@@ -13,7 +13,7 @@ const Xa = styled.div`
 function App() {
   const [count, setCount] = useState(0);
   const also = useSelector(selectCount)
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   const {t} = useTranslation();
 

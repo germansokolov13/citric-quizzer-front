@@ -1,4 +1,5 @@
-import {configureStore, createSlice} from "@reduxjs/toolkit";
+import { configureStore, createSlice, ThunkAction, UnknownAction } from "@reduxjs/toolkit";
+import { useDispatch } from 'react-redux';
 
 const counterSlice = createSlice({
     name: 'counter',
@@ -25,16 +26,6 @@ const counterSlice = createSlice({
 export const { incremented, decremented } = counterSlice.actions
 export const { selectCount } = counterSlice.selectors
 
-export const interesting = (x) => async (dispatch, getState) => {
-    console.log('interesting', x);
-    const state = getState();
-    const count = selectCount(state);
-    console.log('count', count);
-    for (let i = 0; i < x; i++) {
-        dispatch(incremented());
-    }
-};
-
 export const store = configureStore({
     reducer: {
         counter: counterSlice.reducer,
@@ -43,3 +34,25 @@ export const store = configureStore({
         thunk: true,
     }),
 });
+
+type AppDispatch = AppStore['dispatch'];
+export const useAppDispatch = () => useDispatch<AppDispatch>();
+type AppStore = typeof store;
+type RootState = ReturnType<AppStore['getState']>;
+
+type AppThunk<ReturnType = void> = ThunkAction<
+  ReturnType,
+  RootState,
+  unknown,
+  UnknownAction
+>
+
+export const interesting: (x: number) => AppThunk = (x) => async (dispatch, getState) => {
+    console.log('interesting', x);
+    const state = getState();
+    const count = selectCount(state);
+    console.log('count', count);
+    for (let i = 0; i < x; i++) {
+        dispatch(incremented());
+    }
+};
