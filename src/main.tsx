@@ -1,6 +1,7 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import App from './App.tsx'
+import '@mdxeditor/editor/style.css'
+// import './aa/style.css'
 import './index.css'
 import {
     createBrowserRouter,
@@ -18,6 +19,7 @@ import Settings from './pages/settings/Settings.tsx';
 import AntdConfigProvider from './common/components/AntdConfigProvider.tsx';
 import AnswerQuestion from './pages/answer-question/AnswerQuestion.tsx';
 import EditQuiz from './pages/edit-quiz/EditQuiz.tsx';
+import QuestionForm from './pages/edit-quiz/QuestionForm.tsx';
 
 i18next.use(initReactI18next).init({
     lng: 'en', // if you're using a language detector, do not define the lng option
@@ -52,6 +54,10 @@ const router = createBrowserRouter([
     {
         path: '/edit-quiz',
         element: <EditQuiz />,
+    },
+    {
+        path: '/question-form',
+        element: <QuestionForm />,
     },
 ]);
 

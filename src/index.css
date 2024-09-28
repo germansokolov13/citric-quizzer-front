@@ -55,3 +55,19 @@ body {
   line-height: 1.1;
   letter-spacing: 0.2rem;
 }
+.h3-title {
+  font-size: 1.3em;
+  line-height: 1.1;
+  letter-spacing: 0.1rem;
+  font-weight: bold;
+}
+
+.mdxeditor-toolbar {
+  border-radius: 5px 5px 0 0;
+}
+
+.mdxeditor-root-contenteditable {
+  border: 1px solid #999;
+  border-radius: 0 0 5px 5px;
+  border-top: 0;
+}
