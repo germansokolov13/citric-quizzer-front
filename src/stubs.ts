@@ -21,3 +21,17 @@ export const questionStub = {
   ],
 };
 
+export const questionStubWithAnswers = {
+  id: 42,
+  questionNumber: 15,
+  content: 'What is the *capital* of France?',
+  isMultipleChoice: true,
+  isFreeText: false,
+  answers: [
+    { content: 'Paris', isCorrect: true, isChosen: false },
+    { content: '*London*', isCorrect: false, isChosen: true },
+    { content: lorem, isCorrect: false, isChosen: false },
+    { content: 'Madrid', isCorrect: false, isChosen: false },
+  ],
+};
+

@@ -20,6 +20,7 @@ import AntdConfigProvider from './common/components/AntdConfigProvider.tsx';
 import AnswerQuestion from './pages/answer-question/AnswerQuestion.tsx';
 import EditQuiz from './pages/edit-quiz/EditQuiz.tsx';
 import QuestionForm from './pages/edit-quiz/QuestionForm.tsx';
+import Result from './pages/result/Result.tsx';
 
 i18next.use(initReactI18next).init({
     lng: 'en', // if you're using a language detector, do not define the lng option
@@ -58,6 +59,10 @@ const router = createBrowserRouter([
     {
         path: '/question-form',
         element: <QuestionForm />,
+    },
+    {
+        path: '/result',
+        element: <Result />,
     },
 ]);
 
